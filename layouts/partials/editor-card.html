@@ -1,0 +1,9 @@
+<div class="editor-card">
+  {{ with .avatar }}
+  <img class="editor-avatar" src="{{ . | relURL }}" alt="{{ $.name }}">
+  {{ end }}
+  <div class="editor-info">
+    <a class="editor-name" href="{{ printf "editors/%s/" .id | relURL }}">{{ .name }}</a>
+    {{ with .bio }}<p class="editor-bio">{{ . }}</p>{{ end }}
+  </div>
+</div>

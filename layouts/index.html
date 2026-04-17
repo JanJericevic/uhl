@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="home-hero">
+  <h1>{{ .Site.Title }}</h1>
+  <p class="tagline">{{ .Site.Params.tagline }}</p>
+  
+  {{ if .Content }}
+  <div class="home-intro">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</section>
+
+{{ partial "subscribe-form.html" . }}
+
+{{ $editions := (where .Site.RegularPages "Section" "editions").ByParam "number" | last 1 }}
+{{ range $editions }}
+<section class="latest-edition">
+  <h2>Zadnja številka</h2>
+  {{ partial "summary.html" . }}
+</section>
+{{ end }}
+
+<nav class="home-archive-link">
+  <a href="{{ "editions/" | relURL }}">Vsi Uhli</a>
+</nav>
+{{ end }}

@@ -1,0 +1,13 @@
+<section class="subscribe">
+  <h2>Email Uhl</h2>
+  <p>Ob vsaki številki bo prišel ven tudi newsletter.</p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/{{ .Site.Params.buttondownUser }}"
+    method="post"
+    target="popupwindow"
+    class="subscribe-form"
+  >
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Prijava</button>
+  </form>
+</section>

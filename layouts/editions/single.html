@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ $editorID := index .Params.editors 0 }}
+{{ $editor := index .Site.Data.editors $editorID }}
+<article class="edition">
+  <header class="edition-header">
+    <span class="edition-number">#{{ .Params.number }}</span>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "sl-date.html" .Date }}</time>
+  </header>
+
+  {{ if $editor }}
+    {{ partial "editor-card.html" $editor }}
+  {{ end }}
+
+  {{ if .Content }}
+  <div class="edition-intro">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  <ol class="tracklist">
+    {{ range .Params.tracks }}
+    <li class="track">
+      <span class="track-artist">{{ .artist }}</span>
+      <span class="track-title">{{ .title }}</span>
+      <span class="track-meta">({{ with .album }}{{ . }}, {{ end }}{{ .year }})</span>
+      {{ with .note }}<p class="track-note">{{ . }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ol>
+
+  {{ with .Params.playlist_url }}
+  <div class="playlist-link">
+    <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Listen on your platform</a>
+  </div>
+  {{ end }}
+</article>
+{{ end }}

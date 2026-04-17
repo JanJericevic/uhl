@@ -1,0 +1,376 @@
+/* ==========================================================================
+   Uhl — Design Tokens
+   Designer: replace these values to restyle the entire site.
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-bg: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-surface-alt: #f0f0f0;
+  --color-border: #e0e0e0;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-accent: #222222;
+  --color-accent-alt: #555555;
+
+  /* Typography */
+  --font-display: "Georgia", serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Layout */
+  --max-width: 40rem;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 var(--space-md);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Site Header
+   ========================================================================== */
+
+.site-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-header ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+}
+
+.site-header a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+
+.site-header a:hover {
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+.home-hero {
+  text-align: center;
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.home-hero h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.tagline {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  margin-top: var(--space-sm);
+}
+
+.home-archive-link {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.home-intro {
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Subscribe
+   ========================================================================== */
+
+.subscribe {
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+
+.subscribe h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.subscribe p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.subscribe-form {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.subscribe-form button {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover {
+  background: var(--color-accent-alt);
+}
+
+/* ==========================================================================
+   Edition
+   ========================================================================== */
+
+.edition-header {
+  margin-bottom: var(--space-lg);
+}
+
+.edition-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.edition-header time {
+  display: block;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+.edition-intro {
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Editor Card
+   ========================================================================== */
+
+.editor-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-radius: 4px;
+  margin-bottom: var(--space-lg);
+}
+
+.editor-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.editor-name {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.editor-name:hover {
+  color: var(--color-accent);
+}
+
+.editor-bio {
+  color: var(--color-text-muted);
+  margin: var(--space-xs) 0 0;
+  font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Tracklist
+   ========================================================================== */
+
+.tracklist {
+  list-style: none;
+  padding: 0;
+  counter-reset: track;
+}
+
+.track {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+  counter-increment: track;
+}
+
+.track::before {
+  content: counter(track);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-right: var(--space-sm);
+}
+
+.track-artist {
+  font-weight: 700;
+}
+
+.track-artist::after {
+  content: " — ";
+  font-weight: 400;
+}
+
+.track-title {
+  font-style: italic;
+}
+
+.track-meta {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.track-note {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin: var(--space-xs) 0 0;
+}
+
+.playlist-link {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.playlist-link a {
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Archive
+   ========================================================================== */
+
+.edition-summary {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.edition-summary a {
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+}
+
+.edition-summary .edition-number {
+  font-size: 1.25rem;
+}
+
+.edition-summary time {
+  color: var(--color-text-muted);
+}
+
+.edition-editor {
+  color: var(--color-text-muted);
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   Editors List
+   ========================================================================== */
+
+.editors-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.editor-listing a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.editor-listing .editor-card {
+  margin-bottom: 0;
+}
+
+.edition-count {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-left: var(--space-md);
+}
+
+.editor-page-header {
+  margin-bottom: var(--space-lg);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}

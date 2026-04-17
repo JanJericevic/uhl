@@ -1,0 +1,11 @@
+{{ $editorID := index .Params.editors 0 }}
+{{ $editor := index .Site.Data.editors $editorID }}
+<article class="edition-summary">
+  <a href="{{ .RelPermalink }}">
+    <span class="edition-number">Uhl #{{ .Params.number }}</span>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "sl-date.html" .Date }}</time>
+    {{ if $editor }}
+    <span class="edition-editor">Selektor: {{ $editor.name }}</span>
+    {{ end }}
+  </a>
+</article>

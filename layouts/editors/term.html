@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ $editorData := index site.Data.editors .Data.Term }}
+{{ if $editorData }}
+  <header class="editor-page-header">
+    {{ partial "editor-card.html" $editorData }}
+  </header>
+  <h1>Uhli</h1>
+{{ end }}
+
+<div class="archive">
+  {{ range (.Pages.ByParam "number").Reverse }}
+    {{ partial "summary.html" . }}
+  {{ end }}
+</div>
+{{ end }}

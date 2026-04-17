@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>Selektorji</h1>
+<div class="editors-list">
+  {{ range .Pages }}
+    {{ $editorData := index site.Data.editors .Data.Term }}
+    <article class="editor-listing">
+      <a href="{{ .RelPermalink }}">
+        {{ if $editorData }}
+          {{ partial "editor-card.html" $editorData }}
+        {{ else }}
+          <span>{{ .Data.Term }}</span>
+        {{ end }}
+      </a>
+      <span class="edition-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}številka{{ else }}številke{{ end }}</span>
+    </article>
+  {{ end }}
+</div>
+{{ end }}

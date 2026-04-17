@@ -1,0 +1,13 @@
+<section class="subscribe">
+  {{ with .Get "title" }}<h3>{{ . }}</h3>{{ end }}
+  {{ with .Get "description" }}<p>{{ . }}</p>{{ end }}
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/{{ .Page.Site.Params.buttondownUser }}"
+    method="post"
+    target="popupwindow"
+    class="subscribe-form"
+  >
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Prijava</button>
+  </form>
+</section>

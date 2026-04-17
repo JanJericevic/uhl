@@ -1,0 +1,15 @@
+baseURL: "https://example.com/"
+defaultContentLanguage: "sl"
+languageCode: "sl"
+title: "Uhl"
+description: "Glasbeni občasnik"
+
+params:
+  tagline: "Glasbeni občasnik"
+  buttondownUser: "your-buttondown-username"
+
+taxonomies:
+  editor: "editors"
+
+pagination:
+  pagerSize: 50
